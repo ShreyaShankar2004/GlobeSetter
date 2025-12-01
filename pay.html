@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Set timeout duration to 2 seconds
+        const timeoutDuration = 180000; // 2000 milliseconds = 2 seconds
+        
+        // Redirect to packages.html after 2 seconds
+        setTimeout(function() {
+            alert('Your session has expired. Please try again.');
+            window.location.href = 'packages.html';
+        }, timeoutDuration);
+    </script>
+    <style>
+       /* General styling for body */
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+    
+        /* Styling for the payment section */
+        .payment-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Change to column to stack items */
+            padding: 5rem;
+            margin-top: 30px;     
+        }
+
+        .payment-section .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            width: 100%;    
+        }
+
+        /* Styling the image to be on the left */
+        .payment-section .row .image {
+            flex: 1 1 40rem;
+            width: 50%; /* Adjust the width of the image section */
+        }
+
+        .payment-section .row .image img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 4rem;
+        }
+
+        /* Styling the payment form to be on the right */
+        .payment-section .row form {
+            flex: 1 1 40rem;
+            padding: 2rem;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Form input styling */
+        .payment-section .row form .inputBox {
+            padding: 0.5rem 0;
+        }
+
+        .payment-section .row form .inputBox input,
+        .payment-section .row form .inputBox select {
+            width: 100%;
+            padding: 1rem;
+            border: 0.1rem solid rgba(0, 0, 0, 0.1);
+            font-size: 1.7rem;
+            color: #333;
+            text-transform: none;
+        }
+
+        .payment-section .row form .inputBox h3 {
+            font-size: 2rem;
+            padding: 1rem 0;
+            color: #666;
+        }
+
+        /* Payment button styling */
+        .payment-section .row form .btn {
+            width: 100%;
+            background-color: orange;
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-section .row form .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 600px) {
+            .payment-section {
+                flex-direction: column; /* Stack the image and form vertically */
+                padding: 2rem;
+            }
+
+            .payment-section .row .image,
+            .payment-section .row form {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Centering the heading */
+        .heading {
+            text-align: center;
+            font-size: 2.5rem; /* Adjust the font size as needed */
+            margin-bottom: 1rem; /* Space below the heading */
+            color: #333; /* Change color if needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+        <a href="Home.html" class="logo"><span>G</span>lobesetter</a>
+        <nav class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="Home.html#service">Services</a> 
+            <a href="Home.html#review">Review</a> 
+        </nav>
+        <div class="icons">
+            <a href="contact.html">
+                <i class="fas fa-user" id="login-btn"></i>
+            </a>
+        </div>
+
+        <form class="search-bar-container" method="get" action="search.php">
+            <input type="search" id="search-bar" placeholder="Search here..." required>
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+
+    <section class="payment-section" id="payment">
+        <h1 class="heading">
+            <span>p</span>
+            <span>a</span>
+            <span>y</span>
+            <span>m</span>
+            <span>e</span>
+            <span>n</span>
+            <span>t</span>
+        </h1>
+        <div class="row">
+            <div class="image">
+                <img src="pay.jpg" alt="Payment Image">
+            </div>
+
+            <form id="paymentForm" action="payment_submit.php" method="post">
+                <div class="inputBox">
+                    <h3>Payment Option</h3>
+                    <select id="paymentOption" name="paymentOption" required>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <h3>Card Holder Name</h3>
+                    <input type="text" id="cardName" name="cardName" placeholder="Enter card holder name" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Card Number</h3>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required pattern="\d{16}" title="Please enter a valid 16-digit card number">
+                </div>
+                <div class="inputBox">
+                    <h3>Expiry Date</h3>
+                    <input type="date" id="expiryDate" name="expiryDate" required>
+                </div>
+                <div class="inputBox">
+                    <h3>CVV</h3>
+                    <input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required pattern="\d{3}" title="Please enter a valid 3-digit CVV">
+                </div>
+                <div class="inputBox">
+                    <h3>Billing Address</h3>
+                    <input type="text" id="billingAddress" name="billingAddress" placeholder="Enter billing address" required>
+                </div>
+                <input type="submit" class="btn" value="Pay Now">
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+  
+        document.querySelectorAll('a[href^="Home.html"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').split('#')[1];
+                const targetElement = document.getElementById(targetId);
+                
+                // Smooth scroll to the target element
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        (function() {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...arguments) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(arguments);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") {
+                            return target.q;
+                        }
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function() {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "qpHXw83R6mHgMgwHxH2T6"; // Ensure this ID is correct
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+</body>
+</html>

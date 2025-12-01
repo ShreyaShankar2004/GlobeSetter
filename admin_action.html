@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Manage Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green */
+        }
+
+        input[type="text"]::placeholder,
+        input[type="number"]::placeholder,
+        input[type="date"]::placeholder,
+        input[type="email"]::placeholder {
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+
+            input[type="submit"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function toggleFields() {
+            const action = document.getElementById("action").value;
+            const allFields = document.querySelectorAll(".field");
+            const updateField = document.getElementById("updateField");
+            const insertFields = document.getElementById("insertFields");
+
+            // Show/hide fields based on the selected action
+            allFields.forEach(field => field.style.display = "none");
+            if (action === "insert") {
+                insertFields.style.display = "block";
+            } else if (action === "update") {
+                document.getElementById("userIdField").style.display = "block";
+                updateField.style.display = "block";
+            } else if (action === "delete") {
+                document.getElementById("userIdField").style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Admin Panel - Manage Users</h2>
+    <form action="admin_action.php" method="POST">
+        <div id="actionSelect" class="field">
+            <label for="action">Select Action:</label>
+            <select id="action" name="action" onchange="toggleFields()" required>
+                <option value="">Select an action</option>
+                <option value="insert">Insert</option>
+                <option value="update">Update</option>
+                <option value="delete">Delete</option>
+            </select>
+        </div>
+
+        <!-- User ID Field for Update/Delete -->
+        <div id="userIdField" class="field" style="display: none;">
+            <label for="id">User ID:</label>
+            <input type="number" name="id" placeholder="Enter User ID"><br><br>
+        </div>
+
+        <!-- Insert Fields -->
+        <div id="insertFields" class="field" style="display: none;">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter Name"><br><br>
+
+            <label for="destination">Destination:</label>
+            <input type="text" name="destination" placeholder="Enter Destination"><br><br>
+
+            <label for="amount">Amount:</label>
+            <input type="text" name="amount" placeholder="Enter Amount" readonly><br><br>
+
+            <label for="mobile">Mobile:</label>
+            <input type="text" name="mobile" placeholder="Enter Mobile Number"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Enter Email Address"><br><br>
+
+            <label for="rooms">Rooms:</label>
+            <input type="number" name="rooms" placeholder="Enter Number of Rooms"><br><br>
+
+            <label for="guests">Guests:</label>
+            <input type="number" name="guests" placeholder="Enter Number of Guests"><br><br>
+
+            <label for="checkin">Check-In Date:</label>
+            <input type="date" name="checkin"><br><br>
+
+            <label for="checkout">Check-Out Date:</label>
+            <input type="date" name="checkout"><br><br>
+        </div>
+
+        <!-- Update Specific Field Selection -->
+        <div id="updateField" class="field" style="display: none;">
+            <label for="updateFieldSelect">Select Field to Update:</label>
+            <select name="updateField">
+                <option value="name">Name</option>
+                <option value="destination">Destination</option>
+                <option value="amount">Amount</option>
+                <option value="mobile">Mobile</option>
+                <option value="email">Email</option>
+                <option value="rooms">Rooms</option>
+                <option value="guests">Guests</option>
+                <option value="checkin">Check-In Date</option>
+                <option value="checkout">Check-Out Date</option>
+            </select>
+            <input type="text" name="newValue" placeholder="Enter new value"><br><br>
+        </div>
+
+        <input type="submit" value="Execute">
+    </form>
+</body>
+</html>
+
+
+

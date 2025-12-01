@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+        <a href="Home.html" class="logo"><span>G</span>lobesetter</a>
+        <nav class="navbar">
+            <a href="Home.html">home</a>
+            <a href="packages.html">packages</a>
+            <a href="Home.html#service">services</a>
+            <a href="Home.html#review">review</a>
+            <a href="Itinerary.html">itinerary</a>
+        </nav>
+        <div class="icons">
+            <a href="contact.html">
+                <i class="fas fa-user" id="login-btn"></i>
+            </a>
+        </div>
+        <form class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+
+    <section class="book" id="book">
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span>
+            <span>o</span>
+            <span>k</span>
+            <span class="space"></span>
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+        <div class="row">
+            <div class="image">
+                <img src="book.jpg" alt="">
+            </div>
+            <form id="bookingForm" action="submit.php" method="post">
+                <div class="inputBox">
+                    <h3>Customer Name</h3>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Destination</h3>
+                    <input type="text" id="destination" name="destination" readonly required>
+                </div>
+                <div class="inputBox">
+                    <h3>Amount</h3>
+                    <input type="text" id="amount" name="amount" readonly required>
+                </div>
+                <div class="inputBox">
+                    <h3>Mobile No.</h3>
+                    <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Email Id.</h3>
+                    <input type="email" name="Email" placeholder="Enter your Email Id" required>
+                </div>
+                
+                <div class="inputBox">
+                    <h3>Guests</h3>
+                    <input type="number" name="guests" placeholder="Enter no. of guests" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Rooms</h3>
+                    <input type="number" name="rooms" placeholder="Enter no. of rooms" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Check-In Date</h3>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Check-Out Date</h3>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                
+                <input type="submit" class="btn" value="Proceed to Pay">
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(param => {
+                const [key, value] = param.split("=");
+                params[decodeURIComponent(key)] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        // Fill the input fields with destination and amount from the URL
+        const queryParams = getQueryParams();
+        document.getElementById('destination').value = queryParams.destination || '';
+        document.getElementById('amount').value = queryParams.amount || '';
+
+        document.querySelectorAll('a[href^="Home.html"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').split('#')[1];
+                const targetElement = document.getElementById(targetId);
+                
+                // Smooth scroll to the target element
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

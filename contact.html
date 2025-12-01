@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website: Globesetter</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+        <a href="Home.html" class="logo"><span>G</span>lobesetter</a>
+        <nav class="navbar">
+            <a href="Home.html">home</a>
+            <a href="packages.html">packages</a>
+            <a href="Home.html#service">services</a> 
+            <a href="Home.html#review">review</a> 
+            <a href="Itinerary.html">itinerary</a>
+        </nav>
+
+        <div class="icons">
+            <a href="contact.html">
+                <i class="fas fa-user" id="login-btn"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="contact" id="contact">
+        <h1 class="heading">
+            <span>s</span>
+            <span>i</span>
+            <span>g</span>
+            <span>n</span>
+            <span>-</span>
+            <span>i</span>
+            <span>n</span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="contact.jpg" alt="">
+            </div>
+            <form action="submit2.php" id="contactForm" method="POST">
+                <div class="inputBox">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="inputBox">
+                    <input type="tel" name="mobile" placeholder="Mobile Number" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <input type="submit" class="btn" value="Submit">
+            </form>
+        </div>
+
+        <script src="script.js">
+            document.querySelectorAll('a[href^="Home.html"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').split('#')[1];
+                    const targetElement = document.getElementById(targetId);
+                    
+                    // Smooth scroll to the target element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            </script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="travel.xsl"?>
+<TravelCatalog>
+    <Customer>
+        <Name>John Doe</Name>
+        <Destination>France</Destination>
+        <Rooms>5</Rooms>
+        <Guests>7</Guests>
+        <Check-InDate>2024-06-15</Check-InDate>
+        <Check-OutDate>2024-06-22</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Alice Smith</Name>
+        <Destination>Japan</Destination>
+        <Rooms>2</Rooms>
+        <Guests>8</Guests>
+        <Check-InDate>2024-08-01</Check-InDate>
+        <Check-OutDate>2024-08-11</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Michael Johnson</Name>
+        <Destination>Italy</Destination>
+        <Rooms>4</Rooms>
+        <Guests>8</Guests>
+        <Check-InDate>2024-09-10</Check-InDate>
+        <Check-OutDate>2024-09-15</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Haley Brown</Name>
+        <Destination>Thailand</Destination>
+        <Rooms>1</Rooms>
+        <Guests>1</Guests>
+        <Check-InDate>2024-07-20</Check-InDate>
+        <Check-OutDate>2024-07-23</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>James Smith</Name>
+        <Destination>Hawai</Destination>
+        <Rooms>1</Rooms>
+        <Guests>2</Guests>
+        <Check-InDate>2024-05-05</Check-InDate>
+        <Check-OutDate>2024-05-09</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Alex Miller</Name>
+        <Destination>Hawai</Destination>
+        <Rooms>1</Rooms>
+        <Guests>1</Guests>
+        <Check-InDate>2024-10-15</Check-InDate>
+        <Check-OutDate>2024-10-29</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>James Wilson</Name>
+        <Destination>Spain</Destination>
+        <Rooms>1</Rooms>
+        <Guests>2</Guests>
+        <Check-InDate>2024-08-25</Check-InDate>
+        <Check-OutDate>2024-08-31</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Nadia Kumar</Name>
+        <Destination>Singapore</Destination>
+        <Rooms>1</Rooms>
+        <Guests>1</Guests>
+        <Check-InDate>2024-11-10</Check-InDate>
+        <Check-OutDate>2024-11-18</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Mahesh Chopra</Name>
+        <Destination>Dubai</Destination>
+        <Rooms>1</Rooms>
+        <Guests>2</Guests>
+        <Check-InDate>2024-09-01</Check-InDate>
+        <Check-OutDate>2024-09-10</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Swathi Sharma</Name>
+        <Destination>Italy</Destination>
+        <Rooms>4</Rooms>
+        <Guests>4</Guests>
+        <Check-InDate>2024-07-05</Check-InDate>
+        <Check-OutDate>2024-07-09</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Aditya Sharma</Name>
+        <Destination>Germany</Destination>
+        <Rooms>1</Rooms>
+        <Guests>3</Guests>
+        <Check-InDate>2024-09-20</Check-InDate>
+        <Check-OutDate>2024-09-25</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Anurag Kashyap</Name>
+        <Destination>Malaysia</Destination>
+        <Rooms>1</Rooms>
+        <Guests>4</Guests>
+        <Check-InDate>2024-08-05</Check-InDate>
+        <Check-OutDate>2024-08-12</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Ethan Wilson</Name>
+        <Destination>Australia</Destination>
+        <Rooms>3</Rooms>
+        <Guests>6</Guests>
+        <Check-InDate>2024-10-01</Check-InDate>
+        <Check-OutDate>2024-10-10</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Mia Johnson</Name>
+        <Destination>Canada</Destination>
+        <Rooms>1</Rooms>
+        <Guests>1</Guests>
+        <Check-InDate>2024-07-15</Check-InDate>
+        <Check-OutDate>2024-07-20</Check-OutDate>
+    </Customer>
+    <Customer>
+        <Name>Jay biswas</Name>
+        <Destination>Spain</Destination>
+        <Rooms>4</Rooms>
+        <Guests>10</Guests>
+        <Check-InDate>2024-11-01</Check-InDate>
+        <Check-OutDate>2024-11-07</Check-OutDate>
+    </Customer>
+</TravelCatalog>

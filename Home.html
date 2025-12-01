@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website: Globesetter</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <header>
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+
+        <a href="Home.html" class="logo"><span>G</span>lobesetter</a>
+         <nav class="navbar">
+            <a href="Home.html">home</a>
+            <a href="packages.html">packages</a>
+            <a href="Home.html#service">services</a> 
+            <a href="Home.html#review">review</a> 
+            <a href="Itinerary.html">itinerary</a>
+         </nav>
+
+        <div class="icons">
+            <a href="contact.html">
+            <i class="fas fa-user" id="login-btn"></i>
+        </a>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+
+
+
+    <div class="login-form-container">
+
+        <i class="fa-solid fa-xmark" id="form-close"></i>
+
+        <form action="">
+            <h3>Sign-in</h3>
+            <input type="email" class="box" placeholder="enter your email">
+            <input type="password" class="box" placeholder="enter your password">
+            <input type="submit" value="Sign-in now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">remember me</label>
+            <p>forgot password? <a href="fp.html">click here</a></p>
+        </form>
+
+    </div>
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>Spontaneity is the best kind of Adventure.</h3>
+            <p>"The journey of a thousand miles begins with a single step."~ Lao Tzu</p>
+            <a href="packages.html" class="btn">discover more</a>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" data-src="vid1.mp4"></span>
+            <span class="vid-btn" data-src="vid2.mp4"></span>
+            <span class="vid-btn" data-src="vid3.mp4"></span>
+            <span class="vid-btn" data-src="vid4.mp4"></span>
+            <span class="vid-btn" data-src="vid5.mp4"></span>
+        </div>
+
+        <div class="video-container">
+            <video src="vid1.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+    </section>
+
+    <section class="services" id="service">
+        <h1 class="heading">
+            <span>s</span>
+            <span>e</span>
+            <span>r</span>
+            <span>v</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-hotel"></i>
+                <h3>Affordable Hotels</h3>
+                <p>Discover unbeatable deals on budget-friendly hotels worldwide! Book your next stay with us and enjoy comfortable accommodations without breaking the bank.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Safety Guides</h3>
+                <p>Plan your next adventure with peace of mind! Our travel site offers comprehensive safety guides, ensuring your journey is both exciting and secure.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>Food&Beverages</h3>
+                <p>Explore the world through its flavors! Discover unique cuisines and beverages with our curated travel experiences. Book now for a taste of adventure!</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-plane"></i>
+                <h3>Travel the world</h3>
+                <p>Discover seamless travel experiences with our site's best and fastest transport options. Enjoy convenience and speed like never before!</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>Around the world</h3>
+                <p>Embark on a global adventure with our travel site! Discover the world's wonders, from exotic beaches to cultural marvels, and create unforgettable memories around the globe.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-hiking"></i>
+                <h3>Adventures</h3>
+                <p>Embark on thrilling adventures with our travel site! Discover adrenaline-pumping activities and breathtaking destinations for your next unforgettable journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="review" id="review">
+        <h1 class="heading">
+            <span>r</span>
+            <span>e</span>
+            <span>v</span>
+            <span>i</span>
+            <span>e</span>
+            <span>w</span>
+        </h1>
+
+         <div class="swiper-container review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="pic1.jpg" alt="">
+                       <h3>James Smith</h3>
+                       <p>Never had any problems during the trip except my wife getting carsick but mehh we loved the siteseeing part too much. Very trustable travel agency u can find these days as they have all the facilities.</p>
+                       <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                       </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="pic2.jpg" alt="">
+                       <h3>Alex Miller</h3>
+                       <p>First of all the luxury rooms are marvelous and cozy, i couldnt get out of the bed cause it was so comfy. I loved the package they provide, its so reasonable and worth it. My vacation was amazing beacuse of globesetter. Give it a try y'all. </p>
+                       <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                       </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="pic3.jpg" alt="">
+                       <h3>Hailey Brown</h3>
+                       <p>Omg!! i first thought that they were just like any other travel service where they exaggerate themselves but Globesetter actually kept its word. One of the most trusting travel services ever. Me and my family loved the trip.</p>
+                       <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                       </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="pic4.jpg" alt="">
+                       <h3>Nadia Kumar</h3>
+                       <p>Had one of the best experience with this site and their services. They provide amazing rooms, food, etc. Whenever want to plan a trip i only click on globesetter. They are also very easy to contact to as they have a whole webpage for the same.</p>
+                       <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <section class="brand-container">
+            <div class="swiper-container brand-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="1.jpg" alt=""></img></div>
+                    <div class="swiper-slide"><img src="2.jpg" alt=""></img></div>
+                    <div class="swiper-slide"><img src="3.jpg" alt=""></img></div>
+                    <div class="swiper-slide"><img src="4.jpg" alt=""></img></div>
+                    <div class="swiper-slide"><img src="5.jpg" alt=""></img></div>
+                    <div class="swiper-slide"><img src="6.jpg" alt=""></img></div>
+                </div>
+            </div>
+
+</section>
+</body>
+
+<section class="footer">
+    <div class="bc">
+        <div class="bb">
+            <h3>About Us</h3>
+            <p>GlobeSetter is your ultimate travel companion, offering inspiration, planning tools, and local insights for seamless journeys. Our community-driven platform merges practicality with wanderlust, creating a hub for all your travel needs.</p>
+        </div>
+        <div class="bb">
+            <h3>Branching Locations</h3>
+            <a href="#">India</a>
+            <a href="#">USA</a>
+            <a href="#">UK</a>
+            <a href="#">France</a>
+            <a href="#">Japan</a>
+        </div>
+        <div class="bb">
+            <h3>Quick Links</h3>
+            <a href="Home.html">Home</a>
+            <a href="book.html">Book</a>
+            <a href="packages.html">Packages</a>
+            <a href="#">Services</a>
+            <a href="#">Review</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="bb">
+            <h3>Follow Us</h3>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Linkedin</a>
+        </div>
+    </div>
+    <h1 class="credit"> created by <span> Shreya Shankar </span> |All Rights Reserved|</h1>
+
+</section>
+<script>
+    document.querySelectorAll('a[href^="Home.html"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').split('#')[1];
+            const targetElement = document.getElementById(targetId);
+            
+            // Smooth scroll to the target element
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
+        <script>
+            (function() {
+                if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                    window.chatbase = (...arguments) => {
+                        if (!window.chatbase.q) {
+                            window.chatbase.q = [];
+                        }
+                        window.chatbase.q.push(arguments);
+                    };
+                    window.chatbase = new Proxy(window.chatbase, {
+                        get(target, prop) {
+                            if (prop === "q") {
+                                return target.q;
+                            }
+                            return (...args) => target(prop, ...args);
+                        }
+                    });
+                }
+                const onLoad = function() {
+                    const script = document.createElement("script");
+                    script.src = "https://www.chatbase.co/embed.min.js";
+                    script.id = "qpHXw83R6mHgMgwHxH2T6"; // Ensure this ID is correct
+                    script.domain = "www.chatbase.co";
+                    document.body.appendChild(script);
+                };
+                if (document.readyState === "complete") {
+                    onLoad();
+                } else {
+                    window.addEventListener("load", onLoad);
+                }
+            })();
+        </script>
+
+           
+         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+         <script src="script.js"></script>
+        </body>
+        </html>      

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website: Globesetter - Admin Registration</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+        <a href="Home.html" class="logo"><span>G</span>lobesetter</a>
+        <nav class="navbar">
+            <a href="Home.html">home</a>
+            <a href="packages.html">packages</a>
+            <a href="Home.html#service">services</a> 
+            <a href="Home.html#review">review</a> 
+        </nav>
+        <div class="icons">
+            <a href="contact.html">
+                <i class="fas fa-user" id="login-btn"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="contact" id="contact">
+        <h1 class="heading">
+            <span>a</span>
+            <span>d</span>
+            <span>m</span>
+            <span>i</span>
+            <span>n</span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="contact.jpg" alt="Admin Contact">
+            </div>
+            <form action="admin_data.php" id="adminForm" method="POST">
+                <div class="inputBox">
+                    <input type="text" name="full_name" pattern="[A-Za-z ]+" placeholder="Full Name" required>
+                    <input type="text" name="employee_id" placeholder="Employee ID" required>
+                </div>
+                <div class="inputBox">
+                    <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Mobile Number" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="password" placeholder="Password" required
+                           pattern="(?=.*[A-Z])(?=.*[!@#$%^&*(),.?\":{}|>
+                           <input type="text" name="access_code" placeholder="Admin Access Code" required 
+                           pattern="[A-Za-z0-9]+" title="Access code should contain letters and numbers only.">
+                </div>
+                <div class="inputBox">
+                    <select name="security_question" id="security_question" required>
+                        <option value="" disabled selected>Select a security question</option>
+                        <option value="mother_maiden">What is your mother's maiden name?</option>
+                        <option value="first_pet">What was the name of your first pet?</option>
+                        <option value="favorite_teacher">Who was your favorite teacher?</option>
+                    </select>
+                    <input type="text" name="security_answer" placeholder="Answer" required>
+                </div>
+                <input type="submit" class="btn" value="Submit">
+            </form>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website: Globesetter</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <header>
+        <div id="menu-bar" class="fa-solid fa-bars"></div>
+
+        <a href="Home.html" class="logo"><span>G</span>lobesetter</a>
+         <nav class="navbar">
+            <a href="Home.html">home</a>
+            <a href="packages.html">packages</a>
+            <a href="Home.html#service">services</a> 
+            <a href="Home.html#review">review</a> 
+            <a href="Itinerary.html">Itinerary</a>
+         </nav>
+
+        <div class="icons">
+            <a href="contact.html">
+            <i class="fas fa-user" id="login-btn"></i>
+        </a>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+  <title>Travel Itinerary Planner</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      padding: 40px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #0077b6;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .planner-container {
+      max-width: 600px;
+      background: #ffffff;
+      margin: 0 auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-edit {
+      background-color: #0077b6;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .toggle-edit:hover {
+      background-color: #005f87;
+    }
+
+    .input-group {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .input-group button {
+      background-color: #00b4d8;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .input-group button:hover {
+      background-color: #0077b6;
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #00b4d8;
+    }
+
+    .event {
+      background: #caf0f8;
+      margin: 15px 0;
+      padding: 15px 20px;
+      border-radius: 10px;
+      position: relative;
+      margin-left: 50px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .event::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: -30px;
+      width: 15px;
+      height: 15px;
+      background: #0077b6;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    .event strong {
+      display: block;
+      color: #0077b6;
+      margin-bottom: 5px;
+    }
+
+    .remove-btn {
+      background-color: #ff6b6b;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      float: right;
+      display: none;
+    }
+
+    .remove-btn:hover {
+      background-color: #e63946;
+    }
+
+    .edit-mode .remove-btn {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Travel Itinerary Planner</h1>
+
+  <div class="planner-container">
+    <button class="toggle-edit" onclick="toggleEdit()">✏️ Edit Itinerary</button>
+
+    <div class="input-group" id="inputForm">
+      <input type="text" id="destination" placeholder="Destination / Activity">
+      <input type="date" id="date">
+      <input type="time" id="time">
+      <textarea id="notes" rows="2" placeholder="Additional notes (optional)"></textarea>
+      <button onclick="addEvent()">Add to Itinerary</button>
+    </div>
+
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <script>
+    let isEditing = false;
+
+    function toggleEdit() {
+      isEditing = !isEditing;
+      document.getElementById("inputForm").style.display = isEditing ? "flex" : "none";
+      document.getElementById("timeline").classList.toggle("edit-mode", isEditing);
+      document.querySelector(".toggle-edit").textContent = isEditing ? "✅ Done" : "✏️ Edit Itinerary";
+    }
+
+    function addEvent() {
+      const destination = document.getElementById("destination").value.trim();
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const notes = document.getElementById("notes").value.trim();
+
+      if (!destination || !date || !time) {
+        alert("Please fill in destination, date, and time.");
+        return;
+      }
+
+      const timeline = document.getElementById("timeline");
+
+      const event = document.createElement("div");
+      event.className = "event";
+      event.innerHTML = `
+        <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>
+        <strong>${destination}</strong>
+        <em>${date} at ${time}</em>
+        <p>${notes || ""}</p>
+      `;
+
+      timeline.appendChild(event);
+
+      // Clear inputs
+      document.getElementById("destination").value = "";
+      document.getElementById("date").value = "";
+      document.getElementById("time").value = "";
+      document.getElementById("notes").value = "";
+    }
+  </script>
+
+</body>
+</html>
